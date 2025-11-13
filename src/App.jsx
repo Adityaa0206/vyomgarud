@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function App() {
   return (
     <div className="min-h-screen bg-gray-900 text-white font-sans">
-      <header className="max-w-6xl mx-auto px-6 py-10">
+      <header className="max-w-6xl mx-auto px-6 py-6 sticky top-0 backdrop-blur-xl bg-gray-900/70 border-b border-gray-800 z-50">
         <nav className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl flex items-center justify-center border border-gray-700">
@@ -20,23 +20,41 @@ export default function App() {
             </div>
           </div>
           <div className="space-x-6 hidden md:flex items-center text-sm text-gray-300">
-            <a href="#about" className="hover:text-white">
+            <a
+              href="#about"
+              className="hover:text-orange-400 transition-colors duration-200"
+            >
               About
             </a>
-            <a href="#capabilities" className="hover:text-white">
+            <a
+              href="#capabilities"
+              className="hover:text-orange-400 transition-colors duration-200"
+            >
               Capabilities
             </a>
-            <a href="#highlights" className="hover:text-white">
+            <a
+              href="#highlights"
+              className="hover:text-orange-400 transition-colors duration-200"
+            >
               Highlights
             </a>
-            <a href="#contact" className="text-orange-400 hover:opacity-90">
+            <a
+              href="#contact"
+              className="text-orange-400 hover:opacity-90 transition-colors duration-200"
+            >
               Contact
             </a>
           </div>
         </nav>
       </header>
 
-      <section className="bg-[url('data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'1600\\' height=\\'600\\'><rect width=\\'100%\\' height=\\'100%\\' fill=\\'%23202222\\' /><g fill=\\'%23ff8b00\\' opacity=\\'0.06\\'><circle cx=\\'200\\' cy=\\'100\\' r=\\'180\\'/><circle cx=\\'1200\\' cy=\\'320\\' r=\\'220\\'/></g></svg>')] bg-cover bg-center">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="bg-[url('data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'1600\\' height=\\'600\\'><rect width=\\'100%\\' height=\\'100%\\' fill=\\'%23202222\\' /><g fill=\\'%23ff8b00\\' opacity=\\'0.06\\'><circle cx=\\'200\\' cy=\\'100\\' r=\\'180\\'/><circle cx=\\'1200\\' cy=\\'320\\' r=\\'220\\'/></g></svg>')] bg-cover bg-center scroll-mt-20"
+      >
         <div className="max-w-6xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-12">
           <motion.div
             initial={{ x: -40, opacity: 0 }}
@@ -54,18 +72,17 @@ export default function App() {
             <div className="mt-8 flex gap-4">
               <a
                 href="#contact"
-                className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold px-6 py-3 rounded-lg shadow"
+                className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold px-6 py-3 rounded-lg shadow-lg shadow-orange-500/20 transition-all"
               >
                 Request Demo
               </a>
               <a
                 href="#capabilities"
-                className="inline-block border border-gray-700 px-5 py-3 rounded-lg text-gray-300 hover:text-white"
+                className="inline-block border border-gray-700 px-5 py-3 rounded-lg text-gray-300 hover:text-white transition-colors duration-200"
               >
                 Our Capabilities
               </a>
             </div>
-
             <div className="mt-8 grid grid-cols-3 gap-3 max-w-sm text-xs text-gray-400">
               <div className="bg-gray-800/50 rounded-md p-3">
                 Endurance: 8+ hrs
@@ -81,7 +98,7 @@ export default function App() {
             transition={{ duration: 0.6 }}
             className="flex-1 w-full"
           >
-            <div className="w-full aspect-[16/10] bg-gradient-to-tr from-gray-800 to-gray-700 rounded-2xl shadow-2xl border border-gray-700 overflow-hidden relative">
+            <div className="w-full aspect-[16/10] bg-gradient-to-tr from-gray-800 to-gray-700 rounded-2xl shadow-xl border border-gray-700 overflow-hidden relative hover:shadow-orange-500/10 transition-all">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-56 h-32 rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-600 flex items-center justify-center">
                   <div className="text-sm text-gray-300">
@@ -95,9 +112,16 @@ export default function App() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="about" className="max-w-6xl mx-auto px-6 py-16">
+      <motion.section
+        id="about"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="max-w-6xl mx-auto px-6 py-16 scroll-mt-20"
+      >
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-2xl font-semibold">About VyomGarud</h2>
@@ -131,9 +155,16 @@ export default function App() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="capabilities" className="max-w-6xl mx-auto px-6 py-10">
+      <motion.section
+        id="capabilities"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="max-w-6xl mx-auto px-6 py-10 scroll-mt-20"
+      >
         <h3 className="text-xl font-semibold">Capabilities & Products</h3>
         <p className="text-gray-400 mt-2">
           Modular platforms designed for different mission profiles.
@@ -170,9 +201,16 @@ export default function App() {
             </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      <section id="highlights" className="max-w-6xl mx-auto px-6 py-10">
+      <motion.section
+        id="highlights"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="max-w-6xl mx-auto px-6 py-10 scroll-mt-20"
+      >
         <h3 className="text-xl font-semibold">Highlights</h3>
         <div className="mt-4 grid sm:grid-cols-2 gap-6">
           <ul className="space-y-3 text-gray-300">
@@ -186,11 +224,15 @@ export default function App() {
             <li>• Designed with MIL-grade materials and testing.</li>
           </ul>
         </div>
-      </section>
+      </motion.section>
 
-      <footer
+      <motion.footer
         id="contact"
-        className="max-w-6xl mx-auto px-6 py-12 border-t border-gray-800"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="max-w-6xl mx-auto px-6 py-12 border-t border-gray-800 scroll-mt-20"
       >
         <div className="grid md:grid-cols-2 gap-8">
           <div>
@@ -241,7 +283,7 @@ export default function App() {
             </div>
           </div>
         </div>
-      </footer>
+      </motion.footer>
     </div>
   );
 }
